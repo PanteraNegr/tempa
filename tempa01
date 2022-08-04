@@ -1,0 +1,18 @@
+#define pino A0
+const int LM35 = A0;
+float Tempa = 0;
+
+ void setup () {
+    Serial.begin(9600);
+    pinMode(LM35,INPUT);
+
+}
+
+ void loop () {
+    Tempa = (float (analogRead(LM35))  * (5.0/1023)) / 0.01;
+    Serial.print ("Tempa:");
+    Serial.print(Tempa);
+    Serial.println("°C");
+    delay(2000);
+
+}
